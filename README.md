@@ -15,5 +15,19 @@ Features include:
  
  For historic reasons this board is refered to as memory and found in the memory\ subdirectory
      
+## OMNI ROMulator
+
+![Image of OMNI ROMulator](https://github.com/GavinAndrews/hardware/images/OMNI_ROM.JPG)
+
+A 6540 ROM replacement board for 6502 based microprocessors, particularly original Commodore PETs and their variants.
+Features include:
+* 32MB ROM containing 16 x 2KB Pages
+* Either 2KB or 4KB ROM Replacement
+* Machined Edge pins for a original chip look and feel
+* Selections made using resolderable jumpers
+ 
+
+     
+
 
 
