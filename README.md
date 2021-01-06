@@ -17,7 +17,7 @@ Features include:
      
 ## OMNI ROMulator
 
-![Image of OMNI ROMulator](https://github.com/GavinAndrews/hardware/tree/master/images/OMNI_ROM.JPG)
+![Image of OMNI ROMulator](OMNI_ROM.JPG)
 
 A 6540 ROM replacement board for 6502 based microprocessors, particularly original Commodore PETs and their variants.
 Features include:
