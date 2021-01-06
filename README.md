@@ -28,6 +28,7 @@ Features include:
 * Machined Edge pins for a original chip look and feel
 * Selections made using resolderable jumpers
  
+ For historic reasons this board is refered to as 6540replacement and found in the 6540replacement\ subdirectory
 
      
 
