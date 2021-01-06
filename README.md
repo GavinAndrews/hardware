@@ -4,6 +4,8 @@ This repository contains designs that have been publically shared and may be rep
 _"Share & Enjoy"_ 
 ## ROMulan PET RAMulator (with EAzy NOPulation) Version 4.1
 
+![Image of ROMulan RAMulator](memory.JPG)
+
 A ROM and RAM replacement board for 6502 based microprocessors, particularly Commodore PETs and their variants.
 Features include:
 * 32MB RAM replacement $0000-$7FFF
