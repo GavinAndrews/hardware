@@ -1,0 +1,52 @@
+CSIM(WM): CUPL Simulation Program
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+CREATED Sun Sep 17 16:28:02 2023
+
+LISTING FOR SIMULATION FILE: DECODE.si
+
+   1: Name     DECODE;
+   2: PartNo   00;
+   3: Date     01/08/2023;
+   4: Revision 01;
+   5: Designer Engineer;
+   6: Company  ACME;
+   7: Assembly None;
+   8: Location ;
+   9: Device   g16v8a;
+  10: 
+  11: 
+  12: ORDER: CLK, DIN_0, DIN_1, DIN_2, DIN_3, OE, !REG_WRITE, !ROM_ACTIVE, !R14, !R15, !R16, !ROM1_CS, !ROM2_CS; 
+  13: 
+  14: 
+
+======================
+             !        
+            !R        
+            RO        
+            EM   !!   
+            G_   RR   
+            _A   OO   
+       DDDD WC   MM   
+       IIII RT!!!12   
+      CNNNN IIRRR__   
+      L____OTV111CC   
+      K0123EEE456SS   
+======================
+0001: 00010011HHHHH
+0002: 00010001HHHHH
+0003: 10010001LLHHH
+0004: 00010011LLHHH
+0005: 10000011LLHHH
+0006: 00000010LLHHL
+0007: 10000010LLHHL
+0008: 00000010LLHHL
+0009: 10000010LLHHL
+0010: 01000001LLHHH
+0011: 11000001HLLHH
+0012: 00000011HLLHH
+0013: 10000010HLLLH
+0014: 00000010HLLLH
+0015: 10000010HLLLH
+0016: 00000011HLLHH
+0017: 10000011HLLHH

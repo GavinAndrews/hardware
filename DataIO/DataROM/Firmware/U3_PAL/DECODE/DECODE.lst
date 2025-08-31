@@ -1,0 +1,54 @@
+LISTING FOR LOGIC DESCRIPTION FILE: DECODE.pld                       Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Sun Sep 17 16:28:02 2023
+
+  1:Name     DECODE ;
+  2:PartNo   00 ;
+  3:Date     01/08/2023 ;
+  4:Revision 01 ;
+  5:Designer Engineer ;
+  6:Company  ACME ;
+  7:Assembly None ;
+  8:Location  ;
+  9:Device   g16v8;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN    1 = CLK                        ; /*                                 */
+ 13:PIN    2 = !ROM_ACTIVE                 ; /*                                 */
+ 14:
+ 15:
+ 16:PIN    3 = DIN_0                 ; /*                                 */
+ 17:PIN    4 = DIN_1                 ; /*                                 */
+ 18:PIN    5 = DIN_2                 ; /*                                 */
+ 19:PIN    6 = DIN_3                 ; /*                                 */
+ 20:
+ 21:PIN    7 = !REG_WRITE                 ; /*                                 */
+ 22:
+ 23:PIN 11 = OE;
+ 24:
+ 25:/* *************** OUTPUT PINS *********************/
+ 26:PIN    14 = !R14;
+ 27:PIN    15 = !R15;
+ 28:PIN    16 = !R16;
+ 29:
+ 30:PIN 18 = !ROM1_CS;
+ 31:PIN 19 = !ROM2_CS;
+ 32:
+ 33:R14.D = (DIN_2 & REG_WRITE) # ( R14 & !REG_WRITE ); 
+ 34:
+ 35:R15.D = (!DIN_1 & REG_WRITE) # ( R15 & !REG_WRITE ); 
+ 36:R16.D = (DIN_0 & REG_WRITE) # ( R16 & !REG_WRITE ); 
+ 37:
+ 38:ROM1_CS = ROM_ACTIVE & !R14;
+ 39:ROM2_CS = ROM_ACTIVE & R14;
+ 40:
+ 41:
+ 42:
+
+
+
+Jedec Fuse Checksum       (2e37)
+Jedec Transmit Checksum   (b946)

@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "CommonProjectLibrary")(type "KiCad")(uri "C:/Users/Gavin/Documents/Projects/hardware/chip-tester/KiCAD6/common/CommonProjectLibrary.kicad_sym")(options "")(descr ""))
+  (lib (name "UserLibrary")(type "KiCad")(uri "C:/Users/Gavin/Documents/Projects/hardware/chip-tester/KiCAD6/common/UserLibrary.kicad_sym")(options "")(descr ""))
+  (lib (name "ATSAMC21N18A-ANT")(type "KiCad")(uri "C:/Users/Gavin/Documents/Projects/hardware/chip-tester/KiCAD6/common/ATSAMC21N18A-ANT.kicad_sym")(options "")(descr ""))
+)

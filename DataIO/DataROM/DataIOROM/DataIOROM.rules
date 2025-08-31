@@ -1,0 +1,86 @@
+
+(rules PCB DataIOROM
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2756)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.1)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    VCC GND "Net-(D1-K)" BANK0 BANK1 BANK2 "U19_O3" "U19_O2"
+    "U19_O1" A7 A4 A5 A6 "U14_O4" "U14_O3" "U14_O2"
+    "U14_O1" "U19_O4" A14 A13 A12 A11 A8 A9
+    A10 RnW A15 BANK3 "U20_nOE" PA14 PA15 A16
+    PA16 A17 A18 A3 A2 A1 A0 Q0
+    Q1 Q2 Q3 Q4 Q5 Q6 Q7 "nROM_ACTIVE"
+    D0 D1 D2 D3 nV02 "nPAGE_REGISTER_WRITE" "nROM_OE" "unconnected-(U3-IO8-Pad12)"
+    "unconnected-(U3-IO7-Pad13)" "unconnected-(U3-I03-Pad17)" "unconnected-(U3-IO2-Pad18)" "unconnected-(U3-IO1-Pad19)" "U7_p1" "U7_p2" "U7_p3" "U7_p4"
+    "U7_p6" "U7_p7" "U7_p8" "U7_p9" "U7_p10" "U7_p11" "U7_p13" "U7_p14"
+    "U7_p16" "U18_p1" "U18_p2" "U18_p4" "U18_p6" "U18_p8" "U18_p10" "U18_p11"
+    "U18_p12" "U18_p13" "U18_p14" "U18_p15" "U18_p16" "unconnected-(U20-Pin_1-Pad1)" "unconnected-(U20-Pin_27-Pad27)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

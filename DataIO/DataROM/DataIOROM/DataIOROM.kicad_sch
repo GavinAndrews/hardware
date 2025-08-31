@@ -1,0 +1,48 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 223a3467-0a2a-4b06-a7e7-27257babc65e)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 185.42 68.58) (size 69.85 41.91) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 73f93232-d393-4aed-ad22-e1652be95c6f)
+    (property "Sheetname" "Decode" (at 185.42 67.8684 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "decode.kicad_sch" (at 185.42 111.0746 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "DataIOROM"
+        (path "/223a3467-0a2a-4b06-a7e7-27257babc65e" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 55.88 64.77) (size 78.74 43.18) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid b6745015-7415-4093-bd6a-4fbb38cb19e8)
+    (property "Sheetname" "ROM" (at 55.88 64.0584 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "rom.kicad_sch" (at 55.88 108.5346 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "DataIOROM"
+        (path "/223a3467-0a2a-4b06-a7e7-27257babc65e" (page "3"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)

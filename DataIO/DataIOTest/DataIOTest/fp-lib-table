@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "project-common")(type "KiCad")(uri "C:/Users/Gavin/Documents/Projects/hardware/chip-tester/KiCAD6/common/project-common.pretty")(options "")(descr ""))
+)

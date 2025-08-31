@@ -1,0 +1,40 @@
+Name     DECODE ;
+PartNo   00 ;
+Date     01/08/2023 ;
+Revision 01 ;
+Designer Engineer ;
+Company  ACME ;
+Assembly None ;
+Location  ;
+Device   g16v8;
+
+/* *************** INPUT PINS *********************/
+PIN    1 = CLK                        ; /*                                 */
+PIN    2 = !ROM_ACTIVE                 ; /*                                 */
+
+
+PIN    3 = DIN_0                 ; /*                                 */
+PIN    4 = DIN_1                 ; /*                                 */
+PIN    5 = DIN_2                 ; /*                                 */
+PIN    6 = DIN_3                 ; /*                                 */
+
+PIN    7 = !REG_WRITE                 ; /*                                 */
+
+PIN 11 = OE;
+
+/* *************** OUTPUT PINS *********************/
+PIN    14 = !R14;
+PIN    15 = !R15;
+PIN    16 = !R16;
+
+PIN 18 = !ROM1_CS;
+PIN 19 = !ROM2_CS;
+
+R14.D = (DIN_2 & REG_WRITE) # ( R14 & !REG_WRITE ); 
+
+R15.D = (!DIN_1 & REG_WRITE) # ( R15 & !REG_WRITE ); 
+R16.D = (DIN_0 & REG_WRITE) # ( R16 & !REG_WRITE ); 
+
+ROM1_CS = ROM_ACTIVE & !R14;
+ROM2_CS = ROM_ACTIVE & R14;
+

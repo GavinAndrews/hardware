@@ -1,0 +1,82 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 0c9309ff-ee5f-4204-a412-954f58e41dcc)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 49.53 48.26) (size 52.07 35.56) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 392fe607-a331-4f45-a770-4e4a70c7088c)
+    (property "Sheetname" "Connector" (at 49.53 47.5484 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "connector.kicad_sch" (at 49.53 84.4046 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "DataIOTest"
+        (path "/0c9309ff-ee5f-4204-a412-954f58e41dcc" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 135.89 102.87) (size 57.15 39.37) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 50342d92-61df-4064-825f-7896dd46a721)
+    (property "Sheetname" "USB" (at 135.89 102.1584 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "usb.kicad_sch" (at 135.89 142.8246 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "DataIOTest"
+        (path "/0c9309ff-ee5f-4204-a412-954f58e41dcc" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 134.62 46.99) (size 57.15 41.91) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 914c3917-0647-4b2d-8d91-956db5a03ac6)
+    (property "Sheetname" "Power" (at 134.62 46.2784 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "power.kicad_sch" (at 134.62 89.4846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "DataIOTest"
+        (path "/0c9309ff-ee5f-4204-a412-954f58e41dcc" (page "5"))
+      )
+    )
+  )
+
+  (sheet (at 50.8 102.87) (size 55.88 41.91) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 9a3593d2-c4a5-4932-b62f-fe50f54ea7be)
+    (property "Sheetname" "uP" (at 50.8 102.1584 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "uP.kicad_sch" (at 50.8 145.3646 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "DataIOTest"
+        (path "/0c9309ff-ee5f-4204-a412-954f58e41dcc" (page "2"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
