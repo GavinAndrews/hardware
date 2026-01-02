@@ -1,0 +1,76 @@
+module decode
+title 'memory decode'
+
+ R_nW pin 7 istype 'keep';   
+
+ ROM_EN_9AB   pin 8 istype 'retain';
+ ROM_EN_E   pin 14 istype 'retain';
+ ROM_EN_F   pin 13 istype 'retain';
+ ROM_EN_CD   pin 11 istype 'retain';
+
+ RAM_ENABLE   pin 3 istype 'retain';
+ NOPPER_ENABLE    pin 12 istype 'retain';
+
+ A15 pin 1 istype 'retain';
+ A14 pin 2 istype 'retain';
+ A13 pin 4 istype 'retain';
+ A12 pin 5 istype 'retain';
+ A11 pin 6 istype 'retain';
+
+ PHI2 pin 9;
+
+
+ RAM_RANGE, ONBOARD node;
+ ROM_RANGE_9A, ROM_RANGE_B, ROM_RANGE_C, ROM_RANGE_D, ROM_RANGE_LOW_E, ROM_RANGE_F node;
+ ROM_ENABLE_9A, ROM_ENABLE_B, ROM_ENABLE_C, ROM_ENABLE_D, ROM_ENABLE_E, ROM_ENABLE_F node;
+ RAM_ACTIVE node;
+
+ !NOPPER_CHIP_ENABLE   	pin 15  istype 'invert';
+ !BUFFER_OE	 	pin 16  istype 'invert';
+ !RAM_CHIP_ENABLE   	pin 18  istype 'invert';
+ !RAM_OUTPUT_ENABLE   	pin 17  istype 'invert';
+ !ROM_CHIP_ENABLE   	pin 19  istype 'invert';
+
+ H,L,X = 1,0,.X.;
+ Address = [A15,A14,A13,A12, A11,X,X,X, X,X,X,X, X,X,X,X];
+
+equations
+
+
+ ROM_ENABLE_9A = ROM_EN_9AB;
+ ROM_ENABLE_B = ROM_EN_9AB;
+ ROM_ENABLE_C = ROM_EN_CD;
+ ROM_ENABLE_D = ROM_EN_CD;
+ ROM_ENABLE_E = ROM_EN_E;
+ ROM_ENABLE_F = ROM_EN_F;
+
+
+ RAM_RANGE = (Address < ^h8000);
+ RAM_ACTIVE = RAM_RANGE & RAM_ENABLE & !NOPPER_ENABLE;;
+ RAM_CHIP_ENABLE =  RAM_ACTIVE & PHI2;  " Drop CE to guarantee Write Cycle
+ RAM_OUTPUT_ENABLE = RAM_ACTIVE;
+
+
+ ROM_RANGE_9A     = ((Address >= ^h9000) & (Address <= ^hAFFF)) ;
+ ROM_RANGE_B      = ((Address >= ^hB000) & (Address <= ^hBFFF)) & ROM_ENABLE_B;
+ ROM_RANGE_C      = ((Address >= ^hC000) & (Address <= ^hCFFF)) & ROM_ENABLE_C;
+ ROM_RANGE_D      = ((Address >= ^hD000) & (Address <= ^hDFFF)) & ROM_ENABLE_D;
+ ROM_RANGE_LOW_E  = ((Address >= ^hE000) & (Address <= ^hE7FF)) & ROM_ENABLE_E;
+ ROM_RANGE_F      = ((Address >= ^hF000) & (Address <= ^hFFFF)) & ROM_ENABLE_F;
+
+ ROM_CHIP_ENABLE = ((ROM_RANGE_9A & ROM_ENABLE_9A) 
+			# (ROM_RANGE_B & ROM_ENABLE_B) 
+			# (ROM_RANGE_C & ROM_ENABLE_C) 
+			# (ROM_RANGE_D & ROM_ENABLE_D) 
+			# (ROM_RANGE_LOW_E & ROM_ENABLE_E) 
+			# (ROM_RANGE_F & ROM_ENABLE_F)) 
+				& !NOPPER_ENABLE;
+
+
+ ONBOARD = RAM_ACTIVE # ROM_CHIP_ENABLE # NOPPER_ENABLE; 
+
+ BUFFER_OE = !ONBOARD;
+
+ NOPPER_CHIP_ENABLE = NOPPER_ENABLE;
+ 
+end
