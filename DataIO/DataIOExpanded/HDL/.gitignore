@@ -1,0 +1,10 @@
+# Questa/ModelSim compiled library
+work/
+
+# Simulation output
+transcript
+vsim.wlf
+*.wlf
+
+# Questa project lock files
+*.mpf.lock
